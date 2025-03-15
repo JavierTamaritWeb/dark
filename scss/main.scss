@@ -1,0 +1,197 @@
+// main.scss
+@use "sass:map";
+
+// ====================
+// Variables
+// ====================
+$transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+$colors: (
+    light: (
+        bg: hsl(210, 20%, 98%),
+        text: hsl(240, 10%, 20%),
+        accent: hsl(216, 88%, 60%),
+        surface: hsl(0, 0%, 100%)
+    ),
+    dark: (
+        bg: hsl(240, 10%, 12%),
+        text: hsl(210, 20%, 92%),
+        accent: hsl(216, 88%, 50%),
+        surface: hsl(240, 10%, 16%)
+    )
+);
+
+// ====================
+// Mixins
+// ====================
+@mixin theme-transition {
+    transition: background-color $transition, 
+                color $transition, 
+                fill $transition;
+}
+
+// ====================
+// Base Styles
+// ====================
+:root {
+    @each $name, $value in map.get($colors, light) {
+        --color-#{$name}: #{$value};
+    }
+}
+
+[data-theme="dark"] {
+    @each $name, $value in map.get($colors, dark) {
+        --color-#{$name}: #{$value};
+    }
+}
+
+// ====================
+// Componentes
+// ====================
+.page {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    @include theme-transition;
+
+    &__header {
+        padding: 1.5rem;
+        background-color: var(--color-surface);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &__main {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__footer {
+        padding: 2rem;
+        text-align: center;
+        border-top: 1px solid var(--color-accent);
+    }
+}
+
+// ====================
+// Navegación
+// ====================
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    &__list {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        @include theme-transition;
+
+        &:hover {
+            background-color: var(--color-accent);
+            color: white;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        gap: 0.8rem;
+        align-items: center;
+        margin-left: auto;
+    }
+}
+
+// ====================
+// Botón de Tema
+// ====================
+.theme-toggle {
+    $self: &;
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    @include theme-transition;
+
+    &:hover {
+        background-color: var(--color-accent);
+    }
+
+    &__icon {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        @include theme-transition;
+
+        &--moon {
+            opacity: 1;
+        }
+
+        &--sun {
+            opacity: 0;
+            stroke: white !important;
+        }
+    }
+
+    [data-theme="dark"] & {
+        #{$self}__icon--moon {
+            opacity: 0;
+        }
+        
+        #{$self}__icon--sun {
+            opacity: 1;
+        }
+    }
+}
+
+// ====================
+// Botón de Idioma
+// ====================
+.lang-toggle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        use {
+            filter: brightness(1.15);
+        }
+    }
+
+    &__icon {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        text {
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            user-select: none;
+            font-size: 14px;
+        }
+    }
+}

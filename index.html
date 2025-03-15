@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Mi Sitio</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="page">
+        <header class="page__header">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link" data-lang data-lang-es="Inicio" data-lang-ca="Inici">Inicio</a></li>
+                    <li><a href="agenda.html" class="nav__link" data-lang data-lang-es="Agenda" data-lang-ca="Agenda">Agenda</a></li>
+                    <li><a href="servicios.html" class="nav__link" data-lang data-lang-es="Servicios" data-lang-ca="Serveis">Servicios</a></li>
+                    <li><a href="portafolio.html" class="nav__link" data-lang data-lang-es="Portafolio" data-lang-ca="Portafoli">Portafolio</a></li>
+                    <li><a href="contacto.html" class="nav__link" data-lang data-lang-es="Contacto" data-lang-ca="Contacte">Contacto</a></li>
+                </ul>
+                <div class="nav__controls">
+                    <button id="theme-toggle" class="theme-toggle">
+                        <!-- Iconos del tema -->
+                    </button>
+                    <button id="lang-toggle" class="lang-toggle">
+                        <svg class="lang-toggle__icon">
+                            <use href="#icon-lang-ca"></use>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="page__main">
+            <h1 data-lang data-lang-es="Bienvenido" data-lang-ca="Benvingut">Bienvenido</h1>
+            <p data-lang data-lang-es="Contenido principal..." data-lang-ca="Contingut principal...">Contenido principal...</p>
+        </main>
+
+        <footer class="page__footer">
+            <p data-lang data-lang-es="© 2024 Mi Sitio Web" data-lang-ca="© 2024 El meu lloc web">© 2024 Mi Sitio Web</p>
+        </footer>
+    </div>
+
+    <!-- SVG Definitions -->
+    <svg style="display: none;">
+        <symbol id="icon-lang-es" viewBox="0 0 32 32">
+            <rect width="32" height="32" rx="16" fill="var(--color-accent)"/>
+            <text x="50%" y="62%" font-size="14" font-family="Arial" 
+                fill="var(--color-surface)" text-anchor="middle">ES</text>
+        </symbol>
+        <symbol id="icon-lang-ca" viewBox="0 0 32 32">
+            <rect width="32" height="32" rx="16" fill="var(--color-accent)"/>
+            <text x="50%" y="62%" font-size="14" font-family="Arial" 
+                fill="var(--color-surface)" text-anchor="middle">CA</text>
+        </symbol>
+    </svg>
+
+    <script src="./js/theme.js" type="module"></script>
+    <script src="./js/lang.js" type="module"></script>
+</body>
+</html>
