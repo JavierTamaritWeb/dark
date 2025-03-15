@@ -8,7 +8,7 @@ class LanguageManager {
 
     constructor() {
         if (LanguageManager.#instance) return LanguageManager.#instance;
-        // Cargar el idioma desde localStorage o usar el predeterminado.
+        // Cargar el idioma desde localStorage o usar el idioma predeterminado.
         this.lang = localStorage.getItem(LanguageManager.#STORAGE_KEY) || LanguageManager.#DEFAULT_LANG;
         if (!LanguageManager.#LANGUAGES.includes(this.lang)) {
             this.lang = LanguageManager.#DEFAULT_LANG;
@@ -23,7 +23,6 @@ class LanguageManager {
     init() {
         this.applyLanguage();
         this.bindEvents();
-        // Escuchar el evento de cambio de tema para actualizar el color del botón.
         document.addEventListener('themeChanged', () => this.updateButton());
     }
 
@@ -39,7 +38,7 @@ class LanguageManager {
         this.applyLanguage();
     }
 
-    // Actualiza el botón para mostrar el código del idioma activo.
+    // Actualiza el botón de idioma para mostrar el código del idioma activo.
     updateButton() {
         if (!this.langButton) return;
         const currentLang = this.lang;
@@ -59,14 +58,19 @@ class LanguageManager {
         // Crear un nuevo elemento <span> que mostrará el idioma activo.
         const labelElement = document.createElement('span');
         labelElement.className = 'lang-toggle__label';
-        labelElement.textContent = currentLang.toUpperCase();
+        
+        // Si el idioma es 'ca' (Catalán/Valenciano), mostrar "VA"; de lo contrario, el código en mayúsculas.
+        const displayLang = currentLang === 'ca' ? 'VA' : currentLang.toUpperCase();
+        labelElement.textContent = displayLang;
+        
         labelElement.style.position = 'absolute';
         labelElement.style.top = '50%';
         labelElement.style.left = '50%';
         labelElement.style.transform = 'translate(-50%, -50%)';
         labelElement.style.fontWeight = 'bold';
         labelElement.style.pointerEvents = 'none';
-        // Determinar el color en función del tema actual.
+        
+        // Ajustar el color según el tema.
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         labelElement.style.color = currentTheme === 'light' ? 'black' : 'white';
         
