@@ -15,18 +15,21 @@ class LanguageManager {
     }
 
     applyLanguage() {
-        // Actualizar contenido
+        // Actualizar contenido y botón
+        const targetLang = this.lang === 'es' ? 'ca' : 'es';
+        const langButton = document.getElementById('lang-toggle');
+        
+        // Actualizar icono y etiqueta
+        langButton.querySelector('use').setAttribute('href', `#icon-lang-${targetLang}`);
+        langButton.setAttribute('data-lang', targetLang.toUpperCase());
+        
+        // Actualizar textos
         document.documentElement.lang = this.lang;
         document.querySelectorAll('[data-lang]').forEach(element => {
             const translation = element.getAttribute(`data-lang-${this.lang}`);
             if (translation) element.textContent = translation;
         });
-
-        // Actualizar botón (mostrar idioma objetivo)
-        const targetLang = this.lang === 'es' ? 'ca' : 'es';
-        const useElement = document.querySelector('#lang-toggle use');
-        useElement?.setAttribute('href', `#icon-lang-${targetLang}`);
-
+        
         localStorage.setItem(LanguageManager.#STORAGE_KEY, this.lang);
     }
 
