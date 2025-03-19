@@ -4,7 +4,7 @@ class LanguageManager {
     static #instance;
     static #STORAGE_KEY = 'lang';
     static #DEFAULT_LANG = 'es';
-    static #LANGUAGES = ['es', 'ca', 'en', 'fr', 'ru', 'it'];
+    static #LANGUAGES = ['es', 'ca', 'en', 'fr', 'it', 'de', 'ru'];
 
     constructor() {
         if (LanguageManager.#instance) return LanguageManager.#instance;

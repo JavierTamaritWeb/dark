@@ -10,13 +10,13 @@ $colors: (
     light: (
         bg: hsl(210, 20%, 98%),
         text: hsl(240, 10%, 20%),
-        accent: hsl(216, 88%, 60%),
+        accent: #FF6F61,
         surface: hsl(0, 0%, 100%)
     ),
     dark: (
         bg: hsl(240, 10%, 12%),
         text: hsl(210, 20%, 92%),
-        accent: hsl(216, 88%, 50%),
+        accent: #FF6F61,
         surface: hsl(240, 10%, 16%)
     )
 );

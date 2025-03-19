@@ -1,14 +1,14 @@
 :root {
   --color-bg: hsl(210, 20%, 98%);
   --color-text: hsl(240, 10%, 20%);
-  --color-accent: hsl(216, 88%, 60%);
+  --color-accent: #FF6F61;
   --color-surface: hsl(0, 0%, 100%);
 }
 
 [data-theme=dark] {
   --color-bg: hsl(240, 10%, 12%);
   --color-text: hsl(210, 20%, 92%);
-  --color-accent: hsl(216, 88%, 50%);
+  --color-accent: #FF6F61;
   --color-surface: hsl(240, 10%, 16%);
 }
 
