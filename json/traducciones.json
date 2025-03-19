@@ -1,0 +1,83 @@
+{
+    "tituloInicio": {
+      "es": "Inicio - Mi Sitio",
+      "ca": "Inici - El meu lloc",
+      "en": "Home - My Website",
+      "fr": "Accueil - Mon site",
+      "ru": "Главная - Мой сайт",
+      "it": "Home - Il mio sito",
+      "de": "Startseite - Meine Webseite"
+    },
+    "inicio": {
+      "es": "Inicio",
+      "ca": "Inici",
+      "en": "Home",
+      "fr": "Accueil",
+      "ru": "Главная",
+      "it": "Home",
+      "de": "Startseite"
+    },
+    "agenda": {
+      "es": "Agenda",
+      "ca": "Agenda",
+      "en": "Schedule",
+      "fr": "Agenda",
+      "ru": "Повестка",
+      "it": "Agenda",
+      "de": "Zeitplan"
+    },
+    "servicios": {
+      "es": "Servicios",
+      "ca": "Serveis",
+      "en": "Services",
+      "fr": "Services",
+      "ru": "Услуги",
+      "it": "Servizi",
+      "de": "Dienstleistungen"
+    },
+    "portafolio": {
+      "es": "Portafolio",
+      "ca": "Portafoli",
+      "en": "Portfolio",
+      "fr": "Portfolio",
+      "ru": "Портфолио",
+      "it": "Portfolio",
+      "de": "Portfolio"
+    },
+    "contacto": {
+      "es": "Contacto",
+      "ca": "Contacte",
+      "en": "Contact",
+      "fr": "Contact",
+      "ru": "Контакты",
+      "it": "Contatti",
+      "de": "Kontakt"
+    },
+    "bienvenido": {
+      "es": "Bienvenido",
+      "ca": "Benvingut",
+      "en": "Welcome",
+      "fr": "Bienvenue",
+      "ru": "Добро пожаловать",
+      "it": "Benvenuto",
+      "de": "Willkommen"
+    },
+    "contenidoPrincipal": {
+      "es": "Contenido principal...",
+      "ca": "Contingut principal...",
+      "en": "Main content...",
+      "fr": "Contenu principal...",
+      "ru": "Основное содержание...",
+      "it": "Contenuto principale...",
+      "de": "Hauptinhalt..."
+    },
+    "footer": {
+      "es": "© 2024 Mi Sitio Web",
+      "ca": "© 2024 El meu lloc web",
+      "en": "© 2024 My Website",
+      "fr": "© 2024 Mon site web",
+      "ru": "© 2024 Мой сайт",
+      "it": "© 2024 Il mio sito web",
+      "de": "© 2024 meine Webseite"
+    }
+  }
